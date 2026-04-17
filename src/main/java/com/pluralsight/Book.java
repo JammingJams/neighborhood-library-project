@@ -13,7 +13,7 @@ public class Book {
         this.isbn = isbn;
         this.title = title;
         this.isCheckedOut = b;
-        this.checkedOutTo = "";
+        this.checkedOutTo = checkedOutTo;
 
     }
 

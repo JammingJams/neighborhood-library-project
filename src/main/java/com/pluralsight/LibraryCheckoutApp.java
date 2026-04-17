@@ -38,14 +38,16 @@ public class LibraryCheckoutApp {
         boolean breakLoop = true;
 
         System.out.println("Welcome to the digital Library!");
-        //Thread.sleep(3000);
+        Thread.sleep(3000);
 
 
 
         while (breakLoop) {
 
-            System.out.println("\nPlease select the what you want to do next!");
-            //Thread.sleep(3000);
+            System.out.println("\n===========------------------===========");
+            System.out.println("Please select the what you want to do next!");
+            System.out.println("===========------------------===========");
+            Thread.sleep(2000);
 
             System.out.println("(1) Show Available Books");
             System.out.println("(2) Show Checked Out Books");
@@ -67,18 +69,24 @@ public class LibraryCheckoutApp {
 
                     }
 
-                    System.out.println("\nType in a book you want to check out");
-                    System.out.println("Type (2) go back to the main Library entrance");
                     //Loop for user choice!
                     while (!choiceCase1.equals("2")) {
                         choiceCase1 = sc.nextLine().trim();
 
                         for (int x = 0; x < books.length; x++ ) {
                             if (choiceCase1.equals(books[x].getTitle())) {
-                                System.out.println("You got " + books[x].getTitle());
+                                System.out.println("You Checked out " + books[x].getTitle());
                                 System.out.print("What is your name? ");
                                 books[x].setIsCheckedOutTo(sc.nextLine());
                                 books[x].setIsCheckOut(true);
+
+                            }
+
+                            if (x == (books.length - 1)) {
+                                System.out.println("\n===========------------------===========");
+                                System.out.println("Type in a book you want to check out!");
+                                System.out.println("Type (2) go back to the main Library entrance");
+
                             }
 
                         }
@@ -92,10 +100,16 @@ public class LibraryCheckoutApp {
                         if (books[i].getIsCheckedOut() == true) {
                             System.out.printf("\n%s, ----  Id: %d, ISBN: %s, %s Checked out this book",books[i].getTitle(), books[i].getId(), books[i].getIsbn(), books[i].getCheckedOutTo());
                         }
+                        if (i == (books.length - 1)) {
+                            System.out.println("\n===========------------------===========");
+                            System.out.println("(C) Select a book you want to check in!");
+                            System.out.println("(X) Go back to the main Library entrance");
+
+                        }
 
                     }
-                    System.out.println("\n(C) Select a book you want to check in!");
-                    System.out.println("(X) Go back to the main Library entrance");
+                    //System.out.println("\n(C) Select a book you want to check in!");
+                    //System.out.println("(X) Go back to the main Library entrance");
 
                     while (!choiceCase1.equals("X")) {
                         choiceCase1 = sc.nextLine().trim();
@@ -116,11 +130,20 @@ public class LibraryCheckoutApp {
                                     } else {
                                         System.out.println("Invalid id");
                                     }
+
                                 }
+                                if (x == (books.length - 1)) {
+                                    System.out.println("\n===========------------------===========");
+                                    System.out.println("(C) Select a book you want to check in!");
+                                    System.out.println("(X) Go back to the main Library entrance");
+
+                                }
+
 
                             }
 
                         }
+
 
 
                     }

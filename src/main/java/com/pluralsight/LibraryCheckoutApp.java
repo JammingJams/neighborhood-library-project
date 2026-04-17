@@ -8,30 +8,29 @@ public class LibraryCheckoutApp {
 
         String[] libraryBooks = {"Harry Potter", "Bible", "World on Wars 2nd Edition", "Pre-Caclus", "Guide on non-fiction", "3D Sculpting for Dummies", "How to be Good at Life", "Promise Book", "The Madhouse", "Guide for Finding Jobs 2026 Edition", "Happy Tree Friends", "Master Studies of Leonardo da Vinci", "Dante's Inferno", "How to Learn Any Skill in Under 30 Minutes", "Artist's Survival Guide", "Taryn's Secret Stash", "Let Him Cook", "Horrors Across the Midwest", "Karoline and the Terrifying Cat", "The Misfits"};
 
-        //Book harryPotter = new Book(5464,"1536123513212","Harry Potter", false, "userName");
 
         Book[] books = new Book[20];
 
-        books[0] = new Book(0460,"1536123513212","Harry Potter", false, "userName");
-        books[1] = new Book(1464,"1536123513212","Bible", false, "userName");
-        books[2] = new Book(2464,"1536123513212","World on Wars 2nd Edition", true, "James");
-        books[3] = new Book(3464,"1536123513212","Pre-Caclus", false, "userName");
-        books[4] = new Book(4464,"1536123513212","Guide on non-fiction", true, "Daniel");
-        books[5] = new Book(5464,"1536123513212","3D Sculpting for Dummies", false, "userName");
-        books[6] = new Book(6464,"1536123513212","How to be Good at Life", false, "userName");
-        books[7] = new Book(7464,"1536123513212","Promise Book", true, "Cheese");
-        books[8] = new Book(8464,"1536123513212","The Madhouse", false, "userName");
-        books[9] = new Book(9464,"1536123513212","Guide for Finding Jobs 2026 Edition", false, "userName");
-        books[10] = new Book(1064,"1536123513212","Happy Tree Friends", false, "userName");
-        books[11] = new Book(1164,"1536123513212","Master Studies of Leonardo da Vinci", true, "Fred");
-        books[12] = new Book(1264,"1536123513212","Dante's Inferno", true, "Debrah");
-        books[13] = new Book(1364,"1536123513212","How to Learn Any Skill in Under 30 Minutes", false, "userName");
-        books[14] = new Book(1464,"1536123513212","Artist's Survival Guide", true, "Jazz");
-        books[15] = new Book(1564,"1536123513212","Taryn's Secret Stash", false, "userName");
-        books[16] = new Book(1664,"1536123513212","Let Him Cook", false, "userName");
-        books[17] = new Book(1764,"1536123513212","Horrors Across the Midwest", true, "Henry");
-        books[18] = new Book(1864,"1536123513212","Karoline and the Terrifying Cat", false, "userName");
-        books[19] = new Book(1964,"1536123513212","The Misfits", true, "Sarah");
+        books[0] = new Book(0460,"153-6-12-351321-2","Harry Potter", false, "userName");
+        books[1] = new Book(1464,"153-6-12-351321-2","Bible", false, "userName");
+        books[2] = new Book(2464,"153-6-12-351321-2","World on Wars 2nd Edition", true, "James");
+        books[3] = new Book(3464,"153-6-12-351321-2","Pre-Caclus", false, "userName");
+        books[4] = new Book(4464,"153-6-12-351321-2","Guide on non-fiction", true, "Daniel");
+        books[5] = new Book(5464,"153-6-12-351321-2","3D Sculpting for Dummies", false, "userName");
+        books[6] = new Book(6464,"153-6-12-351321-2","How to be Good at Life", false, "userName");
+        books[7] = new Book(7464,"153-6-12-351321-2","Promise Book", true, "Cheese");
+        books[8] = new Book(8464,"153-6-12-351321-2","The Madhouse", false, "userName");
+        books[9] = new Book(9464,"153-6-12-351321-2","Guide for Finding Jobs 2026 Edition", false, "userName");
+        books[10] = new Book(1064,"153-6-12-351321-2","Happy Tree Friends", false, "userName");
+        books[11] = new Book(1164,"153-6-12-351321-2","Master Studies of Leonardo da Vinci", true, "Fred");
+        books[12] = new Book(1264,"153-6-12-351321-2","Dante's Inferno", true, "Debrah");
+        books[13] = new Book(1364,"153-6-12-351321-2","How to Learn Any Skill in Under 30 Minutes", false, "userName");
+        books[14] = new Book(1464,"153-6-12-351321-2","Artist's Survival Guide", true, "Jazz");
+        books[15] = new Book(1564,"153-6-12-351321-2","Taryn's Secret Stash", false, "userName");
+        books[16] = new Book(1664,"153-6-12-351321-2","Let Him Cook", false, "userName");
+        books[17] = new Book(1764,"153-6-12-351321-2","Horrors Across the Midwest", true, "Henry");
+        books[18] = new Book(1864,"153-6-12-351321-2","Karoline and the Terrifying Cat", false, "userName");
+        books[19] = new Book(1964,"153-6-12-351321-2","The Misfits", true, "Sarah");
 
         //books[1].setIsCheckedOutTo("Dance");
 
@@ -74,7 +73,7 @@ public class LibraryCheckoutApp {
                         choiceCase1 = sc.nextLine().trim();
 
                         for (int x = 0; x < books.length; x++ ) {
-                            if (choiceCase1.equals(books[x].getTitle())) {
+                            if (choiceCase1.equals(books[x].getId())) {
                                 System.out.println("You Checked out " + books[x].getTitle());
                                 System.out.print("What is your name? ");
                                 books[x].setIsCheckedOutTo(sc.nextLine());
@@ -84,7 +83,7 @@ public class LibraryCheckoutApp {
 
                             if (x == (books.length - 1)) {
                                 System.out.println("\n===========------------------===========");
-                                System.out.println("Type in a book you want to check out!");
+                                System.out.println("Type in a book id you want to check out!");
                                 System.out.println("Type (2) go back to the main Library entrance");
 
                             }
@@ -115,7 +114,7 @@ public class LibraryCheckoutApp {
                         choiceCase1 = sc.nextLine().trim();
 
                         if (choiceCase1.equals("C")) {
-                            System.out.println("Please Select a book to check in");
+                            System.out.println("Please type a book title to check in");
                             String choiceCase2 = sc.nextLine();
 
                             for (int x = 0; x < books.length; x++) {
